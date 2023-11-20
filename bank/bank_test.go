@@ -10,21 +10,21 @@ func TestBank_ValidTransaction(t *testing.T) {
 	bank := NewBank("My Bank")
 	isValid := bank.ValidTransaction(100, card)
 
-	if !isValid {
-		t.Errorf("Expected transaction to be valid, but got %t", isValid)
+	if isValid != "success" {
+		t.Errorf("Expected transaction to be valid, but got %s", isValid)
 	}
 
 	card = creditCard.NewCreditCard("6011797668868728", 1000)
 	isValid = bank.ValidTransaction(100, card)
 
-	if isValid {
-		t.Errorf("Expected transaction to be invalid, but got %t", isValid)
+	if isValid == "success" {
+		t.Errorf("Expected transaction to be invalid, but got %s", isValid)
 	}
 
 	card = creditCard.NewCreditCard("5541808923795240", 1000)
 	isValid = bank.ValidTransaction(10000, card)
 
-	if isValid {
-		t.Errorf("Expected transaction to be invalid, but got %t", isValid)
+	if isValid == "success" {
+		t.Errorf("Expected transaction to be invalid, but got %s", isValid)
 	}
 }

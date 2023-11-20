@@ -25,10 +25,10 @@ func main() {
 	fmt.Print("Enter a transaction amount: ")
 	var amount int
 	fmt.Scanln(&amount)
-
-	if b.ValidTransaction(amount, myCreditCard) {
-		fmt.Printf("The transaction is valid!")
+	result := b.ValidTransaction(amount, myCreditCard)
+	if result == "success" {
+		fmt.Printf("The transaction for $%d on the card ending in %s is valid!", amount, myCreditCard.GetLastFour())
 	} else {
-		fmt.Printf("The transaction is invalid!")
+		fmt.Printf("The transaction for $%d on the card ending in %s is invalid! The reason given is: %s", amount, myCreditCard.GetLastFour(), result)
 	}
 }

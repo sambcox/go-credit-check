@@ -12,10 +12,14 @@ func NewBank(name string) Bank {
 	return Bank{Name: name}
 }
 
-func (b *Bank) ValidTransaction(amount int, myCreditCard creditCard.CreditCard) bool {
+func (b *Bank) ValidTransaction(amount int, myCreditCard creditCard.CreditCard) string {
 	if myCreditCard.GetLimit() >= amount && myCreditCard.IsValid() {
-		return true
+		return "success"
 	} else {
-		return false
+		if myCreditCard.GetLimit() < amount {
+			return "Credit limit exceeded"
+		} else {
+			return "Card is invalid"
+		}
 	}
 }
