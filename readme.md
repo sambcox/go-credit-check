@@ -4,6 +4,10 @@ Welcome to the Credit Card Validator project! This simple Go application allows 
 
 ## Usage
 
+1. Confirm you have Go installed correctly on your local machine at this link:
+
+    https://go.dev/doc/install
+
 1. Clone the repository:
 
     ```bash
