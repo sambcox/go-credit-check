@@ -6,9 +6,9 @@ Welcome to the Credit Card Validator project! This simple Go application allows 
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/sambcox/go-credit-check.git
-   ```
+  ```bash
+  git clone https://github.com/sambcox/go-credit-check.git
+  ```
 
 1. Navigate to the project directory:
 
