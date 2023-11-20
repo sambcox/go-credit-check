@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	myCreditCard := creditCard.NewCreditCard("5541808923795240", 1000)
+	myCreditCard := creditCard.NewCreditCard("6011797668868728", 1000)
 	b := bank.NewBank("My Bank")
 	if b.ValidTransaction(100, myCreditCard) {
 		fmt.Printf("The number %s is valid!", myCreditCard.GetNumber())
